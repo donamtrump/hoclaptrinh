@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+   <script>
+       var array = []
+       array.push({
+           name: "Yasuo15GG",
+           kill: 12,
+           death:10,
+           assist:3
+        })
+        array.push({
+           name: "Yasuo15GG",
+           kill: 12,
+           death:10,
+           assist:3
+        })
+       array.push({
+           name: "zZ_Vjp_pr0-2k7_Zz",
+           kill: 1,
+           death:25,
+           assist:3
+       })
+       array.push({
+           name: "Bronze 5",
+           kill: 5,
+           death:12,
+           assist:3
+       })
+       array.push({
+           name: "Diamond 5",
+           kill: 20,
+           death:0,
+           assist:12
+       })
+       array.push({
+           name: "0976543467",
+           kill: 0,
+           death:7,
+           assist:31
+       })
+       array.push({
+           name: "Tao di miss",
+           kill: 1,
+           death:12,
+           assist:20
+       })
+       array.push({
+           name: "Bozonze 5",
+           kill: 0,
+           death:12,
+           assist:0
+       })
+       array.push({
+           name: "Gay beat Lee shin",
+           kill: 0,
+           death:0,
+           assist:0
+       })
+    console.log(" Ý a");
+       var killranking = array.slice().sort((a,b)=>-a.kill+b.kill).slice(0,3);
+       var deathranking = array.slice().sort((a,b)=>-a.death+b.death).slice(0,3);
+       console.log("Top xanh nhat");
+       killranking.forEach(name => console.log(name.name));
+       console.log("Top feed nhat") ;
+       deathranking.forEach(name => console.log(name.name));
+    console.log("Ý b,");
+       function searchForPlayer(searchQuery) {
+           var regexQuery = new RegExp(searchQuery)
+        console.log(array.filter(player => player.name.search(regexQuery)!==-1))
+       }
+       searchForPlayer(prompt("Tim kiem"));
+    console.log("Ý c");
+       console.log(array.slice().filter(
+           value => ((value.kill+value.assist)/value.death)>1 && ((value.kill+value.assist)/value.death)< 3.5 )
+        );
+    console.log("ý D");
+       function LogNameAndKDA () {
+           array.forEach(element => { 
+               if (element.death===0 ) {
+                   if (element.kill===0 && element.assist===0) {console.log(` Ten nguoi choi : ${element.name},Chi so: ${element.kill}/${element.death}/${element.assist},KDA: afk`)
+                }
+                   else {console.log(` Ten nguoi choi : ${element.name},Chi so: ${element.kill}/${element.death}/${element.assist},KDA: Perfect`)
+                }                    
+                }
+               else {
+               console.log(` Ten nguoi choi : ${element.name},Chi so: ${element.kill}/${element.death}/${element.assist},KDA: ${Math.round(((element.kill+element.assist)/element.death)*100)/100}`)
+            }
+        })}
+        LogNameAndKDA();
+        console.log(array.indexOf(array.find(player => player.name === "Yasuo15GG")))
+
+       // log ra top 3 người chơi xanh nhất trận và feed nhất trận
+       // tạo ra một hàm để tìm kiếm người chơi xét theo tên
+       // tạo ra một hàm để lọc người chơi giữa hai mức 1< KDA <3,5
+       // log ra VD: Ten nguoi choi: <name>, Chi so : <kill>/<death>/<assist>, KDA : <Diem KDA>     
+   </script> 
+</body>
+</html>

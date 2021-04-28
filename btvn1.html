@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+        var danhsachHS = [ 
+        {name: "Nguyen Thi Thuy",age: 16, class: "Lop 11",sex: "Nu"}, 
+        {name: "Nguyen Van Huy",age: 23, class: "DT-05",sex: "Nam" }, 
+        {name: "Tran Van Bang",age: 30,class: "Lua dao",sex: "Nam" }, 
+        {name: "Vu Van Toan",age: 22, class: "KTVL-01",sex: "Nam" }, 
+        {name: "Bui Viet Hoang",age: 4, class: "Lop 4 Tuoi",sex: "Nam" }, 
+        {name: "Mai Van Khang",age: 10,class: "Di lam tho xay",sex: "Nam" }, 
+        {name: "Que Thi Lan",age: 6,class: "Lop 1", sex: "Nu" }, 
+        {name: "Mikami Yua",age: 69,class: "JAV-HD",sex: "Nu" }, 
+        {name: "Dinh The Thanh",age: 21,class: "CNTT V-N-01",sex: "Nam" }, 
+        {name: "Mai Thi Dieu Linh",age: 18,class: "CTTT",sex: "Nu" }, 
+        {name: "Nguyen Van Truong Giang",age: 20,class: "CNTT-01",},
+        {name: "Mai Thi Diem Quynh",age: 19,class: "CNTT-01",sex: "Nu" }, 
+        {name: "Bui Kien Cuong",age: 19,class: "Logistics-01", sex: "Nam" }, 
+        {name: "Dinh Quang Hieu",age: 18, class: "CK-11",sex: "Nam" }, 
+    ]
+function a () {
+    console.log("Ý a,");
+        var female = [];
+        for (let i=0;i<danhsachHS.length;i++) {
+            if (danhsachHS[i].sex=== "Nu") {female[female.length]=danhsachHS[i].sex};
+        }
+        return female
+    }
+    var arr1 =a();
+    console.log("số bạn nữ là",arr1.length);
+function b () {
+    console.log("Ý b,");
+        var above18 = [];
+        for (let i=0;i<danhsachHS.length;i++) {
+            if (danhsachHS[i].age>18) {above18[above18.length]=danhsachHS[i].name};
+        }
+        return above18;
+    }
+    var arr2= b();
+    console.log("các bạn trên 18 tuổi là",arr2);
+function c () {
+    console.log("Ý c,");
+        var jobAndAgeMale=[];
+        for (let i=0;i<danhsachHS.length;i++) {
+            if (danhsachHS[i].sex === "Nam"&& danhsachHS[i].age>18) {
+                jobAndAgeMale[jobAndAgeMale.length]=danhsachHS[i].name+","+danhsachHS[i].class}; 
+        }
+        return jobAndAgeMale;
+
+}
+    var arr3= c();
+    console.log("Tên và nghề của các bạn Nam trên 18 tuổi là:",arr3);
+function d_1 () {
+    console.log("Ý d,");
+        var MaleOk=[];
+        for(let i =0;i<danhsachHS.length;i++) {
+            if (danhsachHS[i].sex==="Nam"&& danhsachHS[i].age>16) {
+                MaleOk[MaleOk.length]=danhsachHS[i].name};
+        }
+        return MaleOk;
+}
+function d_2() {
+        var FemaleOk=[];
+        for(let i =0;i<danhsachHS.length;i++) {
+            if (danhsachHS[i].sex==="Nu"&& danhsachHS[i].age>16) {
+                FemaleOk[FemaleOk.length]=danhsachHS[i].name};
+        }
+        return FemaleOk;
+}   
+    var arr4_1= d_1();
+    var arr4_2= d_2();
+    console.log("Số cặp đủ tuổi quan hệ tình dục là:",arr4_1.length*arr4_2.length)
+    function ham (danhsachHS,callback) {
+        var dapAn = [];
+        for (let i=0;i<danhsachHS.length;i++) {
+            if (callback(danhsachHS[i])) {dapAn.push(danhsachHS[i])
+            }
+        }
+        return dapAn;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+        var danhsachHS = [ 
+        {name: "Nguyen Thi Thuy",age: 16, class: "Lop 11",sex: "Nu"}, 
+        {name: "Nguyen Van Huy",age: 23, class: "DT-05",sex: "Nam" }, 
+        {name: "Tran Van Bang",age: 30,class: "Lua dao",sex: "Nam" }, 
+        {name: "Vu Van Toan",age: 22, class: "KTVL-01",sex: "Nam" }, 
+        {name: "Bui Viet Hoang",age: 4, class: "Lop 4 Tuoi",sex: "Nam" }, 
+        {name: "Mai Van Khang",age: 10,class: "Di lam tho xay",sex: "Nam" }, 
+        {name: "Que Thi Lan",age: 6,class: "Lop 1", sex: "Nu" }, 
+        {name: "Mikami Yua",age: 69,class: "JAV-HD",sex: "Nu" }, 
+        {name: "Dinh The Thanh",age: 21,class: "CNTT V-N-01",sex: "Nam" }, 
+        {name: "Mai Thi Dieu Linh",age: 18,class: "CTTT",sex: "Nu" }, 
+        {name: "Nguyen Van Truong Giang",age: 20,class: "CNTT-01",},
+        {name: "Mai Thi Diem Quynh",age: 19,class: "CNTT-01",sex: "Nu" }, 
+        {name: "Bui Kien Cuong",age: 19,class: "Logistics-01", sex: "Nam" }, 
+        {name: "Dinh Quang Hieu",age: 18, class: "CK-11",sex: "Nam" }, 
+    ]
+    function locDS (danhsachHS,dieukien,loc=function(){}) {
+        var dapAn = danhsachHS.filter(dieukien)
+        var answer = []
+        dapAn.forEach(element=>{
+            answer.push(loc(element))
+        })
+        return answer;
+}
+console.log(locDS(danhsachHS,element=> element.sex==="Nu").length);
+console.log(locDS(danhsachHS,element=> element.age>18).length);
+console.log(locDS(danhsachHS,element=>element.age > 18&&element.sex === "Nam",element => ({name:element.name,class:element.class})))
+console.log(locDS(danhsachHS,element=>element.age > 18&&element.sex === "Nam").length*locDS(danhsachHS,element=>element.age > 18&&element.sex === "Nu").length)
+    </script>
+</body>
+</html>

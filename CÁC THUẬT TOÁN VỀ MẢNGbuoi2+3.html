@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+        var mangGiDo2= ['họ','và','tên']
+        var mangGiDo = [1,2,3,4,5,6,7,8,9,10];
+        var mangGiDo3= [1,5,7,1.5,2,4,15,9,-3];
+    
+    mangGiDo.push(10);//thêm một phần tử vào cuối mảng
+    
+#   mangGiDo.unshift(-1);//thêm một phần tử vào đầu mảng
+    
+#   mangGiDo.pop();//loại bỏ phẩn tử ở cuối mảng
+    
+#    mangGiDo.shift();//loại bỏ phần tử ở đầu mảng
+    
+#   console.log(mangGiDo.slice(3,7)) // log ra một mảng mới có các phần tử từ biến bắt đầu đến ( nhưng ko bao gồm )biến kết thúc
+
+        var copiedArray = mangGiDo.slice() //Copy gia tri cua mang vao 1 mang moi
+
+#    mangGiDo.splice(3,2,12,13,14)// (x,y,z,...,g) x là vị trí xoá phần tử
+                                    // y là số phần tử bị xoá
+                                    // z,...,g là số phần tử thêm vào
+#    var x= mangGiDo2.concat(mangGiDo);// thêm mộ mảng gì đó vào cuối mảng đã cho
+    
+#   console.log("Filter",mangGiDo.filter(value => value>2 || value<5))// lọc các phần tử của mảng theo hàm so sánh 
+    
+#    console.log("find",mangGiDo.find(value => mangGiDo.indexOf(value)>3 && mangGiDo.indexOf(value)<7)) 
+                                                    //phiên bản lỗi của fillter, nó chỉ log đc phần tử đầu tiên True
+    
+#    mangGiDo3.sort((value1,value2) => value1-value2) // sắp xếp, hai biến là hai giá trị liền kề trong mảng, 
+                                                    //nếu kết quả của giá trị trả về âm thì giữ nghuyên vị trí ( ngược lại với dương )
+#    console.log(mangGiDo3)
+    function tongCacPhanTu () {
+        var sum =0;
+        mangGiDo.forEach(a => { sum += a })} // tương tự vơi for, lặp từng phần tử trong mảng.
+        tongCacPhanTu()
+        
+    console.log(mangGiDo2.indexOf('họ')) // cho ra vị trí của phần tử đc gọi tên.
+    
+#    var a = `ABCDD ${mangGiDo}` // một form để điền các thông số vào đó 
+// ĐẠI CƯƠNG VỀ CALLBACK(cơ bản là nó chỉ thay một tham số bằng nguyên một hàm )
+    function ham (a,b,c) {
+    var sum = a+b;
+    return c(sum/12,sum,sum+2);
+    }
+    ham (1,2,function(x,y,z){
+        var answer = x + y + z
+        console.log(answer)
+    });
+        var y=
+        console.log(x);
+        console.log(mangGiDo);
+    
+    </script>
+</body>
+</html>

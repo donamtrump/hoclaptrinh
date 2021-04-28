@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+        var khachhang1 = {
+            ten: "nguyen van a",
+            tuoi: "18",
+            diaChi: "jfalsdahdlj",
+            GiaMua: "1800000",
+        }
+        var khachhang2 = {
+            ten: "ASDKFJHSADF",
+            tuoi: "20",
+            diaChi: "djasjhfasdhf",
+            GiaMua: "182984628342",
+        }
+        var list = [khachhang1,khachhang2,khachhang2,khachhang2,khachhang2,khachhang2,khachhang2];
+    console.log(khachhang1.ten)
+    console.log(list.length)
+    function getCustomer () {
+        console.log (list[1].diaChi);
+
+    }
+    function getAllCustomer () {
+        var listName = []
+        for (let i =0; i< list.length; i++) {
+            console.log(list[i].ten);
+            listName[i]= list[i].ten;
+        }
+        return listName;
+    }
+  var arr = getAllCustomer()
+  console.log(arr)
+    </script>
+</body>
+</html>
+a, viết một hàm trả về giá trị của một mặt hàng cụ thể bao gồm giá và tên rồi lấy giá trị đó in ra ở một hàm khác
+b, viết một hàm trả về một mảng giá trị tên của mặt hàng và in tất cả ra bằng một hàm khác 
+
+
+
+
+
+c)Hàm thứ ba in ra tất cả tên và nghề nghiệp của các học sinh là nam và trên 18 tuổi
+d)Cho biết tuổi quan hệ tình dục hợp pháp ở Việt Nam là trên 16 tuổi, đếm số cặp nam nữ thỏa mãn yêu cầu này,
+và in ra màn hình

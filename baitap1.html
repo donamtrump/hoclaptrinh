@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+    var apple = {
+        name: "apple",
+        price: 10000,
+    }
+    var mango = {
+        name: "mango",
+        price: 10000,
+    }
+    var strawberry = {
+        name:  "strawberry",
+        price: 10000,
+    }
+    var lemon = {
+        name: "lemon",
+        price: 10000,
+    }
+   var menu = [apple,mango,strawberry,lemon];
+   //Ham a1 tra ve ketQua
+   function a_1 (x) {
+    console.log("ý a");
+    var ketQua = {
+           name:null,
+           price:null,
+       }
+      ketQua.name= menu[x].name;
+      ketQua.price= menu[x].price;
+      return ketQua    
+   }
+   function a_2 (y) {
+       console.log(y.name);
+       console.log(y.price)
+   }
+   var ya = a_1(3)
+   a_2(ya)
+   function b_1 () {
+       var listName = [];
+       for (let i=0;i<menu.length;i++) {
+       listName[i]= menu[i].name;
+    }
+        return listName;
+   }
+   function b_2 (m) {
+       console.log(m)
+   }
+   var mang = b_1();
+   b_2 (mang)
+    </script>
+</body>
+</html>
